@@ -24,6 +24,7 @@ bool isPrime(int n);
 int nextPrime(int n);
 int countPrimes(int a, int b);
 bool isTwinPrime(int n);
+int nextTwinPrime(int n);
 
 int main() {
 
@@ -39,9 +40,18 @@ cout << "Enter b: " << endl;
 cin >> b;
 */
 
-cout << isTwinPrime(n);
+cout << nextTwinPrime(n);
 
 }
+
+//int nextTwinPrime(int n);
+ int nextTwinPrime(int n) {
+     int i = n+1;
+     while(!isTwinPrime(i)) {
+         i++;
+          }
+          return i;
+     }
 
 //bool isTwinPrime(int n);
 bool isTwinPrime(int n) {
