@@ -25,23 +25,32 @@ int nextPrime(int n);
 int countPrimes(int a, int b);
 bool isTwinPrime(int n);
 int nextTwinPrime(int n);
+int largestTwinPrime(int a, int b);
 
 int main() {
 
-//int a, b;
-int n;
+int a, b;
 
-cout << "Enter n: " << endl; 
-cin >> n;
-/*
 cout << "Enter a: " << endl; 
 cin >> a;
 cout << "Enter b: " << endl; 
 cin >> b;
-*/
 
-cout << nextTwinPrime(n);
+cout << largestTwinPrime( a, b);
 
+}
+
+//int largestTwinPrime(int a, int b);
+int largestTwinPrime(int a, int b) {
+    int answer=0;
+    if (b < 5) return -1;
+    // A twin prime is odd, so go over odd values.
+    if (b %2 == 0) b--; 
+    for(int i = b; i >= a; i-=2){
+            if(isTwinPrime(i))
+                return i;
+    }
+    return -1;
 }
 
 //int nextTwinPrime(int n);
