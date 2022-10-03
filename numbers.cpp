@@ -22,20 +22,31 @@ using namespace std;
 bool isDivisibleBy(int n, int d);
 bool isPrime(int n);
 int nextPrime(int n);
+int countPrimes(int a, int b);
 
 int main() {
 
-int n, d;
+int a, b;
 
-cout << "Enter n: " << endl; 
-cin >> n;
-//cout << "Enter d: " << endl; 
-//cin >> d;
+cout << "Enter a: " << endl; 
+cin >> a;
+cout << "Enter b: " << endl; 
+cin >> b;
 
-cout << nextPrime(n);
+cout << countPrimes(a,b);
 
 }
 
+//int countPrimes(int a, int b);
+int countPrimes(int a, int b) {
+   int count = 0;
+   for (int i = a ; i <= b; i++) {
+       if(isPrime(i) == true) {
+           count++;
+       }
+   } 
+   return count;
+} 
 //int nextPrime(int n);
 
 int nextPrime(int n) {
