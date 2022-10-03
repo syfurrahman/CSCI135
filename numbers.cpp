@@ -23,18 +23,34 @@ bool isDivisibleBy(int n, int d);
 bool isPrime(int n);
 int nextPrime(int n);
 int countPrimes(int a, int b);
+bool isTwinPrime(int n);
 
 int main() {
 
-int a, b;
+//int a, b;
+int n;
 
+cout << "Enter n: " << endl; 
+cin >> n;
+/*
 cout << "Enter a: " << endl; 
 cin >> a;
 cout << "Enter b: " << endl; 
 cin >> b;
+*/
 
-cout << countPrimes(a,b);
+cout << isTwinPrime(n);
 
+}
+
+//bool isTwinPrime(int n);
+bool isTwinPrime(int n) {
+    if(isPrime(n) == true) {
+        if ((isPrime(n-2) == true) || (isPrime(n+2) == true)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 //int countPrimes(int a, int b);
