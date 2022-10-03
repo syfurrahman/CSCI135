@@ -19,6 +19,47 @@ Let’s implement this decision as a function.
   
 using namespace std;
 
+bool isDivisibleBy(int n, int d);
+bool isPrime(int n);
+int nextPrime(int n);
+
+int main() {
+
+int n, d;
+
+cout << "Enter n: " << endl; 
+cin >> n;
+//cout << "Enter d: " << endl; 
+//cin >> d;
+
+cout << nextPrime(n);
+
+}
+
+//int nextPrime(int n);
+
+int nextPrime(int n) {
+    
+ 
+    // Base case
+    if (n <= 1)
+        return 2;
+ 
+    int prime = n;
+    bool found = false;
+ 
+    // Loop continuously until isPrime returns
+    // true for a number greater than n
+    while (!found) {
+        prime++;
+ 
+        if (isPrime(prime))
+            found = true;
+    }
+ 
+    return prime;
+}
+
 //bool isPrime(int n);
 bool isPrime(int n) {
     if (n < 2) {
@@ -43,21 +84,6 @@ bool isDivisibleBy(int n, int d) {
     } else {
         return false;
     }
-}
-
-
-
-int main() {
-
-int n, d;
-
-cout << "Enter n: " << endl; 
-cin >> n;
-//cout << "Enter d: " << endl; 
-//cin >> d;
-
-cout << isPrime( n)  << endl;
-
 }
 
 /* Copyright 2022 Syfur Rahman */
