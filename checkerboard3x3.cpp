@@ -16,34 +16,31 @@ Write a program checkerboard3x3.cpp that asks the user to input width and height
 */
 
 #include <iostream>
-  
+#include <string>
 using namespace std;
-  
-int main()
-{   
-   int i, j,width, height;
+
+int main() {
+    int x,y;
    cout << " Enter the width: " << endl;
-   cin >> width;
+   cin >> x;
    cout << "Enter the height: " << endl;
-   cin >> height;
+   cin >> y;
    cout << "Shape: " << endl;
 
-   for ( i = 0; i < height; i++) {
+    string res = "";
+    for (int i = 0; i < y; ++i) {
+        for (int j = 0, c = '*'; j < x; ++j, c = '*') {
+            if (((j / 3) & 1) ^ ((i / 3) & 1))
+                c = ' ';
 
-       for ( j = 0; j < width; j++) {
+            res += (char)c;
+        }
 
-           if (((((i/3)%2==1)&&((j%3)%2==1)) || (((i/3)%2==0)&& ((j/3)%2==0)))) {
+        res += '\n';
+    }
 
-               cout << '*';
-           }
-           else{
-
-               cout << " ";
-
-           }
-       } 
-       cout << endl;
-   }
-
+    cout << res;
+    cin.ignore();
+    return 0;
 }
 /* Copyright 2022 Syfur Rahman */
